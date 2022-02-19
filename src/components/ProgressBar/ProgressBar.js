@@ -36,6 +36,7 @@ const ProgressBar = ({ value, size }) => {
     background: ${COLORS.transparentGray15};
     border-radius: 4px;
     padding: var(--padding);
+    overflow: hidden;
    
     
   
@@ -45,6 +46,7 @@ const ProgressBar = ({ value, size }) => {
     background: ${COLORS.primary};
     width: ${({width}) => `${width}%`};
     height: var(--height);
+    border-radius: 4px 0 0 4px;
    
     
   `;
