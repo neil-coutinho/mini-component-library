@@ -15,15 +15,16 @@ const ProgressbarStyles = styled.div`
 
 const BarStyles = styled.div`
   background: ${COLORS.primary};
-  width: 50%;
+  width: ${({width}) => `${width}%`};
   height: 8px;
+  
 `;
 
 
 const ProgressBar = ({ value, size }) => {
   return <ProgressbarStyles role="progressbar" aria-valuenow={value} aria-valuemin="0" aria-valuemax="100">
     {/* {value}% */}
-      <BarStyles></BarStyles>
+      <BarStyles width={value}></BarStyles>
     </ProgressbarStyles>
 };
 
