@@ -27,7 +27,10 @@ const ProgressBar = ({ value, size }) => {
 
   return <ProgressbarStyles role="progressbar" aria-valuenow={value} aria-valuemin="0" aria-valuemax="100" style={{'--padding': style.padding}}>
     {/* {value}% */}
+    <BarWrapper>
       <BarStyles width={value} style={{'--height': style.height}}></BarStyles>
+    </BarWrapper>
+      
     </ProgressbarStyles>
 };
 
@@ -36,11 +39,14 @@ const ProgressBar = ({ value, size }) => {
     background: ${COLORS.transparentGray15};
     border-radius: 4px;
     padding: var(--padding);
-    overflow: hidden;
-   
     
-  
-  `;
+    
+    `;
+
+  const BarWrapper = styled.div `
+    overflow: hidden;
+    border-radius: 4px;
+  `
   
   const BarStyles = styled.div`
     background: ${COLORS.primary};
