@@ -16,11 +16,17 @@ const Select = ({ label, value, onChange, children }) => {
     border-radius: 8px;
     color: ${COLORS.gray700};
     padding: 12px 16px;
+    width: max-content;
+    position: relative;
   
   `;
 
   const Select = styled.select`
-  
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
   
   `;
 
