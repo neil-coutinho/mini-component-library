@@ -7,9 +7,27 @@ import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
 
-const Wrapper = styled.div``;
-const Label = styled.label``;
-const Input = styled.input``;
+
+const Label = styled.label`
+  position: relative;
+`;
+
+
+const Input = styled.input`
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  outline-offset: 3px;
+  width: ${ ({width}) => `${width}px`}
+`;
+
+const IconStyles = styled(Icon)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: auto;
+
+`;
 
 
 const IconInput = ({
@@ -19,16 +37,17 @@ const IconInput = ({
   size,
   placeholder,
 }) => {
-  return <Wrapper>
+  return <>
   
     <Label>
-      <Icon id={icon} />
       <VisuallyHidden>{label}</VisuallyHidden>
+      <IconStyles id={icon} />
+      <Input type="text" placeholder={placeholder}  width={width} />
     </Label>
-    <Input type="text" placeholder={placeholder} />
+    
   
   
-  </Wrapper>
+  </>
 };
 
 export default IconInput;
